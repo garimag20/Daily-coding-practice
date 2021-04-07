@@ -5,15 +5,8 @@ public:
         int osum = nums[0];
         
         for(int i = 1; i < nums.size(); i++){
-            if(csum >= 0){
-                csum += nums[i];
-            }
-            else{
-                csum = nums[i];
-            }
-            if(csum > osum){
-                osum = csum;
-            }
+            csum = max(nums[i], csum+nums[i]);
+            osum = max(csum, osum);
         }
         return osum;
     }
