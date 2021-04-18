@@ -5,10 +5,8 @@ public:
         int maxprice = 0;
         
         for(int i = 0; i < prices.size(); i++){
-            if(prices[i] < minprice)
-                minprice = prices[i];
-            else if(prices[i]-minprice > maxprice)
-                maxprice = prices[i]-minprice;
+            minprice = min(minprice, prices[i]);
+            maxprice = max(maxprice, prices[i]-minprice);
         }
         return maxprice;
     }
