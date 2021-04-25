@@ -1,3 +1,4 @@
+[Discussion Post (created on 25/3/2021 at 20:52)](https://leetcode.com/problems/invert-binary-tree/solution/)  
 <h2>226. Invert Binary Tree</h2><h3>Easy</h3><hr><div><p>Given the <code>root</code> of a binary tree, invert the tree, and return <em>its root</em>.</p>
 
 <p>&nbsp;</p>
