@@ -12,7 +12,6 @@
 class Solution {
 public:
     void swap(TreeNode* node){
-        
         if(!node)
             return;
         swap(node->left);
