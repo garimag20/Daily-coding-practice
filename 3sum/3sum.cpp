@@ -5,24 +5,26 @@ public:
         if(n < 3)
             return {};
         vector<vector<int>> ans;
-        sort(nums.begin() , nums.end());
+        sort(nums.begin(), nums.end());
         for(int i = 0; i < n-2; i++){
-            if(i>0 && nums[i] == nums[i-1])
+            if(i > 0 and nums[i] == nums[i-1])
                 continue;
-            int target = 0-nums[i];
-            int low = i+1, high = n-1;
-            while(low < high){
-                int summ = nums[low]+nums[high];
-                if(summ < target)
+            int sum = 0 - nums[i];
+            int low = i+1;
+            int high = n-1;
+            while(low<high){
+                if(nums[low] + nums[high] < sum){
                     low++;
-                else if(summ > target)
+                }
+                else if(nums[low] + nums[high] > sum){
                     high--;
+                }
                 else{
                     ans.push_back({nums[i], nums[low], nums[high]});
                     low++;
                     high--;
-                    while(low<high && nums[low] == nums[low-1]) low++;
-                    while(low<high && nums[high] == nums[high+1]) high--;
+                    while(low < high and nums[low] == nums[low-1]) low++;
+                    while(low < high and nums[high] == nums[high+1]) high--;
                 }
             }
         }
