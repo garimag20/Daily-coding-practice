@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        vector<vector<int>> ans;
+        //sort
+        sort(intervals.begin(), intervals.end());
+        
+        //store my first interval
+        vector<int> temp = intervals[0];
+        
+        for(auto it : intervals){
+            //check if my next interval startig time is less 
+            //than ending time of current interval
+            if(it[0] <= temp[1]){
+                temp[1] = max(it[1], temp[1]);
+            }
+            else{
+                ans.push_back(temp);
+                temp = it;
+            }
+        }
+        ans.push_back(temp);
+        return ans;
+    }
+};
