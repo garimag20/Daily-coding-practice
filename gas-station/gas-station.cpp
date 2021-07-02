@@ -5,11 +5,11 @@ public:
         int idx = 0;
         int total = 0;
         int tank = 0;
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n ;i++){
             int consume = gas[i] - cost[i];
             tank += consume;
             if(tank < 0){
-                idx = i+1;
+                idx = i +1;
                 tank = 0;
             }
             total += consume;
